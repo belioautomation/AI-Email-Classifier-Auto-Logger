@@ -249,13 +249,6 @@ This project demonstrates:
 - Integration with Notion or Airtable
 
 ---
-
-# 📄 License
-
-This project is licensed under the MIT License.
-
----
-
 # 🙌 Acknowledgements
 
 - n8n
@@ -265,7 +258,11 @@ This project is licensed under the MIT License.
 - Telegram Bot API
 
 ---
+# 📄 License
 
-## ⭐ About
+This project is licensed under the MIT License.
 
-An AI-powered email automation workflow built with **n8n** and **Google Gemini** that classifies Gmail messages, summarizes their content, determines importance, logs results to Google Sheets, and sends Telegram notifications for high-priority emails.
+---
+
+
+
