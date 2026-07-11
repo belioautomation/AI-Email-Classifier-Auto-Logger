@@ -1,38 +1,40 @@
 # 📧 AI Email Classifier & Auto Logger using n8n
 
-An intelligent email automation workflow built with **n8n** and **Google Gemini AI**. This project automatically monitors incoming Gmail messages, classifies each email using AI, stores the results in Google Sheets, and sends Telegram notifications only for important emails.
+An intelligent email automation workflow built with **n8n** and **Google Gemini AI**. This workflow automatically monitors incoming Gmail messages, classifies emails using AI, logs the results to Google Sheets, and sends Telegram notifications for important emails.
 
-Designed as part of a **30-Day n8n Automation Portfolio**, this project demonstrates how AI can automate email triage and improve productivity.
+Built as part of my **30-Day n8n Automation Portfolio**, this project demonstrates AI-powered email classification, workflow automation, and productivity enhancement.
 
 ---
 
-# 📌 Features
+## 📌 Features
 
-- 📩 Automatically monitors new Gmail messages
-- 🤖 Uses Google Gemini AI to classify emails
+- 📩 Automatically monitors incoming Gmail messages
+- 🤖 Classifies emails using Google Gemini AI
 - 📝 Generates AI-powered email summaries
-- ⭐ Detects whether an email is important
-- 📊 Automatically logs every email to Google Sheets
-- 📲 Sends Telegram notifications for important emails only
-- 🧠 Uses structured JSON output for workflow decisions
-- 🆓 Uses free Google Workspace services
+- ⭐ Detects high-priority emails
+- 📊 Logs classified emails to Google Sheets
+- 📲 Sends Telegram notifications for important emails
+- 🧠 Uses structured JSON output for workflow automation
+- ⚡ Fully automated workflow
 
 ---
 
-# 🛠 Technologies Used
+## 🛠️ Technologies Used
 
 - n8n
 - Gmail Trigger
 - Google Gemini AI
+- Code Node (JSON Parser)
+- IF Node
 - Google Sheets API
 - Telegram Bot API
-- JavaScript (Code Node)
+- JavaScript
 
 ---
 
-# 📂 Workflow
+## 📂 Workflow
 
-```
+```text
 Gmail Trigger
       │
       ▼
@@ -57,23 +59,23 @@ Telegram
 
 ---
 
-# ⚙ Workflow Explanation
+## ⚙️ Workflow Explanation
 
-## 1. Gmail Trigger
+### 1. Gmail Trigger
 
 Monitors the Gmail inbox for newly received emails.
 
 Configuration:
 
 - Event: Message Received
-- Polling: Every Minute
 - Label: INBOX
+- Polling: Every Minute
 
 ---
 
-## 2. Edit Fields
+### 2. Edit Fields
 
-Extracts only the necessary email information before sending it to the AI.
+Extracts the required email information before sending it to the AI.
 
 Fields:
 
@@ -84,16 +86,16 @@ Fields:
 
 ---
 
-## 3. AI Agent (Google Gemini)
+### 3. AI Agent (Google Gemini)
 
-Google Gemini analyzes the email and determines:
+Google Gemini analyzes each email and determines:
 
-- Email category
-- Priority level
-- Whether the email is important
-- Short summary
+- Email Category
+- Priority
+- Importance
+- Summary
 
-Expected AI Output:
+Example Output:
 
 ```json
 {
@@ -106,54 +108,52 @@ Expected AI Output:
 
 ---
 
-## 4. Code Node
+### 4. Code Node
 
-Parses the JSON returned by Gemini into structured data that n8n can process.
-
-This replaces the Structured Output Parser, making the workflow compatible with older n8n versions.
+Parses the JSON response returned by Google Gemini into structured data that n8n can process.
 
 ---
 
-## 5. IF Node
+### 5. IF Node
 
 Checks:
 
-```
+```text
 important == true
 ```
 
 If **True**
 
-- Save to Important Emails sheet
+- Save to **Important Emails**
 - Send Telegram notification
 
 If **False**
 
-- Save to Email Archive sheet
+- Save to **Email Archive**
 
 ---
 
-## 6. Google Sheets
+### 6. Google Sheets
 
 Stores all classified emails.
 
-### Important Emails
+**Important Emails**
 
 Stores high-priority emails.
 
-### Email Archive
+**Email Archive**
 
 Stores non-important emails.
 
 ---
 
-## 7. Telegram
+### 7. Telegram
 
 Sends an instant notification whenever an important email is detected.
 
 Example:
 
-```
+```text
 📧 Important Email Detected
 
 📌 Subject:
@@ -171,21 +171,21 @@ High
 📝 Summary:
 Your background appears to match an Admin VA position.
 
-🤖 Classified automatically by Gemini AI
+🤖 Classified automatically using Google Gemini AI.
 ```
 
 ---
 
-# 📊 Google Sheets Structure
+## 📊 Google Sheets Structure
 
 | Date | Subject | Sender | Category | Priority | Summary | Important |
-|------|---------|--------|----------|----------|---------|------------|
+|------|---------|--------|----------|----------|---------|-----------|
 
 ---
 
-# 📁 Repository Structure
+## 📁 Repository Structure
 
-```
+```text
 AI-Email-Classifier/
 │
 ├── README.md
@@ -198,14 +198,11 @@ AI-Email-Classifier/
 │   ├── google-sheets.png
 │   ├── telegram-notification.png
 │   └── workflow-execution.png
-│
-└── assets/
-    └── sample-output.json
 ```
 
 ---
 
-# 📷 Screenshots
+## 📷 Screenshots
 
 Include the following screenshots:
 
@@ -216,53 +213,50 @@ Include the following screenshots:
 - IF Node Execution
 - Google Sheets Results
 - Telegram Notification
+- Workflow Execution
 
 ---
 
-# 🎯 Learning Objectives
+## 🎯 Learning Objectives
 
 This project demonstrates:
 
 - Gmail Automation
 - AI Email Classification
 - Prompt Engineering
-- JSON Parsing
-- JavaScript in n8n
+- Structured JSON Parsing
+- JavaScript Data Processing
 - Conditional Workflow Logic
 - Google Sheets Automation
 - Telegram Automation
-- AI-Powered Decision Making
+- AI-Powered Email Triage
 
 ---
 
-# 🚀 Possible Improvements
+## 🚀 Future Improvements
 
 - Support email attachments
 - AI sentiment analysis
 - Auto-label Gmail messages
-- Auto-reply using AI
+- AI-generated email replies
 - Multi-language email classification
-- Slack notifications
-- Discord notifications
-- Email prioritization scoring
-- Weekly email analytics dashboard
+- Slack and Discord notifications
+- Email priority scoring
+- Weekly analytics dashboard
 - Integration with Notion or Airtable
 
 ---
-# 🙌 Acknowledgements
 
-- n8n
-- Google Gemini AI
-- Gmail API
-- Google Sheets API
-- Telegram Bot API
-
----
-# 📄 License
+## 📜 License
 
 This project is licensed under the MIT License.
 
 ---
 
+## 👨‍💻 Author
 
+**Belio Sinangote**
 
+**30-Day n8n Automation Roadmap**
+
+Building portfolio-ready automation projects using **n8n**, **Google Gemini AI**, and modern workflow automation technologies.
