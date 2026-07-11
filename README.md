@@ -255,8 +255,11 @@ This project is licensed under the MIT License.
 
 ## 👨‍💻 Author
 
-**Belio Sinangote**
+**Belio C. Sinangote**
 
-**30-Day n8n Automation Roadmap**
+BS Information Technology Student
+Cebu Technological University (CTU)
 
-Building portfolio-ready automation projects using **n8n**, **Google Gemini AI**, and modern workflow automation technologies.
+**GitHub:** https://github.com/belioautomation
+
+This project is part of my **30-Day n8n Automation Portfolio**, showcasing practical workflow automation using **n8n**, **OCR APIs**, and **document processing**.
